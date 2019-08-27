@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<conio.h>
+#define MAX_SIZE 5
+int a[MAX_SIZE];
+int top=-1;
+void push()
+{
+if(top==MAX_SIZE-1)
+printf("stack is full");
+else
+{
+printf("enter number:");
+scanf("%d",&a[++top]);
+printf("\n input successfull");
+}
+}
+void pop()
+  {
+  if (top==-1)
+printf("stack is empty");
+else
+{
+printf("removed number is%d",a[top]);
+top--;
+}
+}
+void print()
+{int i;
+if(top==-1)
+printf("stack is empty");
+else
+{
+printf("stack :");
+for(i=0;i<=top;i++)
+{
+printf("\n%d",a[i]);
+}
+}
+
+}
+void main()
+{
+	char ch='s';
+	int n;
+	clrscr();
+	while(ch=='s'||ch=='S')
+	{
+		printf("choose an operation:");
+		printf("\n1.input a number\n2.delete a number \n3.print thr stack");
+		scanf("%d",&n);
+		switch(n)
+		{
+		case 1 : push();
+			 break;
+		case 2 :pop();
+			break;
+		case 3 :print();
+			break;
+		default: printf("\n invalid input");
+		}
+      printf("perform an operation?(s/n):");
+      fflush(stdin);
+      scanf("%c",&ch);
+      }
+getch();
+}
